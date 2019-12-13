@@ -1,4 +1,4 @@
-package model
+package models
 
 import (
 	"fmt"
@@ -8,6 +8,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
+
 type DB_CONFIG struct {
 	username string
 	password string
@@ -15,16 +16,11 @@ type DB_CONFIG struct {
 	charset  string
 }
 
-type User struct{
-	gorm.Model
-	Name string
-}
-
 func getDbConfig() string {
 	var dbParams = DB_CONFIG{
-		username: "username",
+		username: "root",
 		password: "password",
-		dbName:   "dbname",
+		dbName:   "hello",
 		charset:  "utf8",
 	}
 	return fmt.Sprintf("%s:%s@/%s?charset=%s&parseTime=True&loc=Local", dbParams.username, dbParams.password, dbParams.dbName, dbParams.charset)
