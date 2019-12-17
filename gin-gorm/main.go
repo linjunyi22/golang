@@ -1,8 +1,6 @@
 package main
 
-import (
-	"gin-gorm/routers"
-)
+import "gin-gorm/routers"
 
 func ginRun() {
 	r := routers.Router
@@ -10,5 +8,6 @@ func ginRun() {
 }
 
 func main() {
+	// utils.GetDBConf()
 	ginRun()
 }
